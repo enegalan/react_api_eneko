@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 
 function App() {
@@ -65,7 +65,6 @@ function App() {
 
   const fetchInfo = async () => {
     var data = await getData();
-    console.log('fetching info');
     setNombreLocal("");
     setLocalidadLocal("");
     setTipo("");
@@ -100,7 +99,7 @@ function App() {
   
   useEffect(() => {
     fetchData();
-  }, [provincia]);
+  }, [provincia, fetchData]);
 
 
   const handleProvinciaChange = (event) => {
